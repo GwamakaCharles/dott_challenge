@@ -1,4 +1,4 @@
-# Bitmap Challenge
+# Dott Code Challenge
 
 ## Task
 
