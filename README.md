@@ -38,24 +38,32 @@ Write a program which:
 
 ### Running the code
 
-1. Install dependencies
+1. Clone this Repository to your local machine.
 
-```
-yarn install
-```
+    ```
+    git clone https://github.com/GwamakaCharles/dott_challenge.git
+    ```
 
-2. (OPTIONAL) Modify [input.txt](input.txt) with desired cases or use the defaults.
 
-3. Execute the code that'll solve the test cases and output to console.
+2. Install dependencies
 
-```
-yarn start
-```
+    ```
+    yarn install
+    ```
 
+3. (OPTIONAL) Modify [input.txt](input.txt) with desired cases or use the defaults.
+
+4. Execute the code that'll solve the test cases and output to console.
+
+    ```
+    yarn start
+    ```
+
+Note: You can also use the  [Github Codespaces](https://codespaces.github.io/) to run the code.
 ### Running the test suite
 
-```
-yarn test
-```
+    ```
+    yarn test
+    ```
 
 ![](test-suite.png)
