@@ -6,7 +6,6 @@ export function matrixMinDistanceToTarget(problem: Problem) {
   // once it finds a better solution.
   const solution = createMatrix(rows, cols, Number.MAX_SAFE_INTEGER);
 
-  // We'll start from existing target positions and branch out.
   const targetPositions = findAllPositionsWithValue(matrix, target);
 
   // The distance of a position with a value of target is 0, since it is already at target.
@@ -48,23 +47,13 @@ export function createMatrix(
   cols: number,
   initialValue: number
 ): number[][] {
-  const matrix = [];
-
-  for (let row = 0; row < rows; row++) {
-    const row = [];
-
-    for (let col = 0; col < cols; col++) {
-      row.push(initialValue);
-    }
-
-    matrix.push(row);
-  }
-
-  return matrix;
+  return Array(rows)
+    .fill(0)
+    .map(() => Array(cols).fill(initialValue));
 }
 
 /**
- * Finds all points where value is present in matrix.
+ * Finds all positions in a matrix with a value of target.
  * @param matrix
  * @param value
  */
@@ -74,6 +63,8 @@ export function findAllPositionsWithValue(
 ): MatrixPosition[] {
   const positions = [];
 
+  // Loop through the matrix. If the value is found, add it to the positions
+  // array.
   for (let row = 0; row < matrix.length; row++) {
     for (let col = 0; col < matrix[0].length; col++) {
       if (matrix[row][col] === value) {
