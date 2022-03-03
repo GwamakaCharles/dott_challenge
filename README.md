@@ -19,9 +19,9 @@ Write a program which:
 - On the j-th position in the line (i+1), 1 <= i <= n, 1 <= j <= m, is '1' if, and only if the pixel (i,j) is white.
 
 ```
-1
-3 4
-0001
+1 // number of test cases
+3 4 // line x column sizes
+0001 // pixels - 0: black, 1: white
 0011
 0110
 ```
@@ -29,7 +29,7 @@ Write a program which:
 ### Output
 
 ```
-3210
+3210 // distances to the nearest white pixels
 2100
 1001
 ```
