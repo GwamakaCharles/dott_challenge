@@ -7,12 +7,12 @@ const TARGET = 1;
 export const parseInput = (filename: string): Problem[] => {
   const input = fs.readFileSync(filename, "utf8"); // read the file
   const lines = input.split("\n"); // split on newline
-  const totalCases = stringToNumber(lines[0]); // number of test cases
-  const cases = []; // array of test cases
+  const testCases = stringToNumber(lines[0]); // number of test cases
+  const cases: Problem[] = []; // array of test cases
 
   // Read the input for each case.
   let lineIndex = 1; // index of the current line
-  for (let i = 0; i < totalCases; i++) {
+  for (let i = 0; i < testCases; i++) {
     // Read the first line.
     const [rows, cols] = lines[lineIndex++].split(" ").map(stringToNumber); // number of rows and columns
     const matrix = [];
