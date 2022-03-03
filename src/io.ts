@@ -4,20 +4,30 @@ import { Problem } from "./solver";
 
 // Parses the input file and returns an array of problems.
 const TARGET = 1;
-export const parseInput = (filename: string) => {
-  const lines = fs.readFileSync(filename, { encoding: "utf-8" }).split("\n");
-  const totalCases = stringToNumber(lines[0]);
-  const cases: Problem[] = [];
+export const parseInput = (filename: string): Problem[] => {
+  const input = fs.readFileSync(filename, "utf8"); // read the file
+  const lines = input.split("\n"); // split on newline
+  const totalCases = stringToNumber(lines[0]); // number of test cases
+  const cases = []; // array of test cases
 
-  let lineIndex = 1;
+  // Read the input for each case.
+  let lineIndex = 1; // index of the current line
   for (let i = 0; i < totalCases; i++) {
-    const [rows, cols] = lines[lineIndex++].split(" ").map(stringToNumber);
+    // Read the first line.
+    const [rows, cols] = lines[lineIndex++].split(" ").map(stringToNumber); // number of rows and columns
     const matrix = [];
+    // Read the matrix.
     for (let j = 0; j < rows; j++) {
-      const row = lines[lineIndex++].split("").map(stringToNumber);
-      matrix.push(row);
+      const row = lines[lineIndex++].split("").map(stringToNumber); // read the row
+      matrix.push(row); // add the row to the matrix
     }
-    cases.push({ rows, cols, matrix, target: TARGET });
+    // add the test case to the array
+    cases.push({
+      rows,
+      cols,
+      matrix,
+      target: TARGET,
+    });
   }
 
   return cases;
